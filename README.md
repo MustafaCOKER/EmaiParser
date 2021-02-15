@@ -1,1 +1,1 @@
-# EmaiParser
+# EmailParser
