@@ -1,13 +1,12 @@
 #include "Tools.hpp"
 
-uint32_t GotoEndofLine(const char *content)
+uint32_t Util::GotoEndofLine(const char *content)
 {
     uint32_t ret = 0;
 
-    do { ++ret; ++content; } while( *content != '\0' && *content != '\n' && *content != '\r');
+    do { ++ret; ++content; } while( *content != '\0' && Util::not_in<char>(*content, {'\n', '\r'}));
 
-    if (*(content + ret) == '\n')
-        ++ret;
+    while(*content != '\0' && Util::in<char>(*content, {'\n', '\r'})) { ++ret; ++content; }
 
     return ret;
 }

@@ -7,6 +7,8 @@
 
 #include "EmailParser.hpp"
 
+using namespace std;
+
 EmailParser::EmailParser()
 { PrepareAttributesQueue(); }
 
@@ -24,7 +26,7 @@ void EmailParser::PrepareAttributesQueue()
     _attributes.emplace(_attributes.end(), EmailAttr("To:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Cc:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Subject:", PARSERS::OneLineAttrParser));
-    _attributes.emplace(_attributes.end(), "Content-Type: ");
+    _attributes.emplace(_attributes.end(), "Content-Type:");
 }
 
 bool EmailParser::parse(const char *emailContent)
@@ -33,7 +35,7 @@ bool EmailParser::parse(const char *emailContent)
 
     while (*emailContent != '\0')
     {
-        currPos = GotoEndofLine(emailContent);
+        currPos = Util::GotoEndofLine(emailContent);
         
         for (auto item : _attributes)
         {
@@ -44,7 +46,6 @@ bool EmailParser::parse(const char *emailContent)
             }
         } // end of inner loop
 
-        ++currPos;
         emailContent += currPos;
     } // end of while loop
 

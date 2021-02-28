@@ -8,11 +8,13 @@
 
 using namespace std;
 
-char *fileContent = new char[65535];
+constexpr uint32_t MB1 = 1024*1024;
+constexpr uint32_t CONTENT_SIZE = 50*MB1;
+char *fileContent = new char[CONTENT_SIZE];
 
 void readFile()
 {
-    std::ifstream infile("emailInstance.txt");
+    std::ifstream infile("Merhaba Subject.eml");
     std::stringstream iss;
     std::string line;
     
@@ -24,11 +26,10 @@ void readFile()
 
 int main()
 {
-
-    // std::memset(fileContent, 0, sizeof(fileContent));
+    memset(fileContent, 0, CONTENT_SIZE);
 
     readFile();
-    
+
     EmailParser parser;
     parser.parse(fileContent);
 

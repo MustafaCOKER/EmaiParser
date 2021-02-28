@@ -14,13 +14,13 @@ uint32_t PARSERS::InitialParser(const char *, EmailAttr& attr)
 
 uint32_t PARSERS::OneLineAttrParser(const char *content, EmailAttr& attr)
 {
-    uint32_t endPoint = GotoEndofLine(content+attr.GetKey().size());
+    uint32_t endPoint = Util::GotoEndofLine(content+attr.GetKey().size());
     
     attr.SetVal(std::make_pair(content+attr.GetKey().size(), endPoint));
 
-    // BeginEndOffsets be = attr.GetOffsets();
-    // std::string ss(be.first, be.second);
-    // std::cout << "Key : " << attr.GetKey() << " Value Str : " << ss << std::endl;
+    BeginEndOffsets be = attr.GetOffsets();
+    std::string ss(be.first, be.second);
+    std::cout << "Key : " << attr.GetKey() << " Value Str : " << ss << std::endl;
 
     return endPoint;
 }
