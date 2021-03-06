@@ -21,12 +21,12 @@ void EmailParser::PrepareAttributesQueue()
 {
     _attributes.emplace(_attributes.end(), EmailAttr("Message-ID:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("In-Reply-To:", PARSERS::OneLineAttrParser));
-    _attributes.emplace(_attributes.end(), EmailAttr("References:", PARSERS::OneLineAttrParser));
+    _attributes.emplace(_attributes.end(), EmailAttr("References:", PARSERS::ReferenceParser));
     _attributes.emplace(_attributes.end(), EmailAttr("From:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("To:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Cc:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Subject:", PARSERS::OneLineAttrParser));
-    _attributes.emplace(_attributes.end(), "Content-Type:");
+    _attributes.emplace(_attributes.end(), EmailAttr("Content-Type:", PARSERS::ContentAttrParser));
 }
 
 bool EmailParser::parse(const char *emailContent)

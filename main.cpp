@@ -14,7 +14,7 @@ char *fileContent = new char[CONTENT_SIZE];
 
 void readFile()
 {
-    std::ifstream infile("Merhaba Subject.eml");
+    std::ifstream infile("rawEmail.eml");
     std::stringstream iss;
     std::string line;
     
