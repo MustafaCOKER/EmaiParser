@@ -2,7 +2,6 @@
 
 #include <string>
 #include <functional>
-#include <utility>
 
 using std::function;
 using std::string;
