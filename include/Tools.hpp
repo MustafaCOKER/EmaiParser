@@ -20,6 +20,9 @@ class Util
         static bool not_in(T val, std::initializer_list<T> valList );
 
         static uint32_t GotoEndofLine(const char *content);
+        static uint32_t strnchr(const char *str, char c, uint32_t len);
+
+        static uint32_t CleanWhiteSpaces(const char *, uint32_t);
 };
 
 template<typename T>

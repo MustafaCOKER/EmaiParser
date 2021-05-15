@@ -26,7 +26,7 @@ void EmailParser::PrepareAttributesQueue()
     _attributes.emplace(_attributes.end(), EmailAttr("To:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Cc:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Subject:", PARSERS::OneLineAttrParser));
-    // _attributes.emplace(_attributes.end(), EmailAttr("Content-Type:", PARSERS::ContentAttrParser, true));
+    _attributes.emplace(_attributes.end(), EmailAttr("Content-Type:", PARSERS::ContentAttrParser, true));
 }
 
 bool EmailParser::parse(const char *emailContent)
@@ -42,7 +42,6 @@ bool EmailParser::parse(const char *emailContent)
             if ( (!item.isFound() || item.isMultiple()) && 
                 std::strncmp(emailContent, item.GetKey().c_str(), std::min(strlen(emailContent), item.GetKey().size())) == 0)
             {
-                cerr << "item.GetKey() : [" << item.GetKey() << "]\n";
                 currPos = item._parser(emailContent, item, currPos);
                 item.setFound();
                 break;
