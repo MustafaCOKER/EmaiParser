@@ -8,27 +8,27 @@
 
 using namespace std;
 
-constexpr uint32_t MB1 = 1024*1024;
-constexpr uint32_t CONTENT_SIZE = 50*MB1;
+constexpr uint32_t MB1 = 1024 * 1024;
+constexpr uint32_t CONTENT_SIZE = 50 * MB1;
 char *fileContent = new char[CONTENT_SIZE];
 
-void readFile()
+void readFile(const char *const path)
 {
-    std::ifstream infile("rawEmail.eml");
+    std::ifstream infile(path);
     std::stringstream iss;
     std::string line;
-    
+
     while (std::getline(infile, line))
         iss << line << std::endl;
-    
-    std::memcpy(fileContent, iss.str().c_str(), iss.str().size() );
+
+    std::memcpy(fileContent, iss.str().c_str(), iss.str().size());
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     memset(fileContent, 0, CONTENT_SIZE);
 
-    readFile();
+    readFile(argv[1]);
 
     EmailParser parser;
     parser.parse(fileContent);
