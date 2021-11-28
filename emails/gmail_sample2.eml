@@ -1,0 +1,151 @@
+Delivered-To: mustafackr64@gmail.com
+Received: by 2002:a05:6602:2c8f:0:0:0:0 with SMTP id i15csp2854077iow;
+        Sat, 6 Feb 2021 13:44:40 -0800 (PST)
+X-Received: by 2002:a63:ce58:: with SMTP id r24mr10678188pgi.192.1612647880484;
+        Sat, 06 Feb 2021 13:44:40 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1612647880; cv=none;
+        d=google.com; s=arc-20160816;
+        b=t/BKyXi4g+aqT5P305SA3M+uki1dLuzwVDTEoySRE+lzijcpkEzql6SPIyRi2l26oS
+         nJIpEETbVhGu5AffDNO08lnbnTDgpnhe83id1Ex69gNVPPgxO5jVvJii7BEoolCLsUNE
+         eOaT8VmhfR/X0B+zUY8D1O11+nYXdzuw95tCNn07mPTneTXJ1S35Mlk0jfh3Mt3gI9qz
+         6MEfladq6avvzuCXcnUfckUO4rtvrOfjcVTcdCbHn/ltpRzTubbfGCdHSZLMSJdHdXN9
+         tK1NavpRZtC120wrLSl9Y0bfl5KBPw3gDrTDBP14l933+UpvQhxs4Sf3JWC5r3lCTXpY
+         GVgg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=iXTuok2n3Kpiq77icrajlKqDC7/4MYbNor7kLCw9Nfg=;
+        b=lEzmXc2EPQ8pKBXFD/JC8rEdzASPp4pb9G9gZebShFnNkASkPT2mejBbcIr4t+ifmU
+         +P9wYy9ESWuct54uKje+ylnn8QXlP+9je2qMEIvr4P2RQI6AJpLkI7zsWiZxmUIC/lBb
+         VQXqK1d5kf+17+DrLIOq3JyWCPvAod+2kMRzDz2VYBz7wuYE2OzXnCkN0/2QxMlUsb0p
+         jcBZvFbcgYuMRkRoUqIT3amfmKFjQxplU0dRrew5Sv9rghl/enxUtrV58dywGOnf9elC
+         YMtbuCZTwYQLcEo4G2Plb8LV1PZzA5w4acMWSnr+iT8QAoCD96XNb1EgLKmGX54xXIQX
+         WwzQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=OCFwXnHc;
+       spf=pass (google.com: domain of cardtek.mcoker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=cardtek.mcoker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <cardtek.mcoker@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id y8sor9152876pjl.0.2021.02.06.13.44.40
+        for <mustafackr64@gmail.com>
+        (Google Transport Security);
+        Sat, 06 Feb 2021 13:44:40 -0800 (PST)
+Received-SPF: pass (google.com: domain of cardtek.mcoker@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=OCFwXnHc;
+       spf=pass (google.com: domain of cardtek.mcoker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=cardtek.mcoker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=iXTuok2n3Kpiq77icrajlKqDC7/4MYbNor7kLCw9Nfg=;
+        b=OCFwXnHc9QVB7lVAlBbY7WSL+RkM/FwBM1mk0LU2cHCfVnNCbH18gGpUV9hPuQ6rdL
+         GyVxBszbi9q0+SVH13TH/sNGcLDw/scUHq0O/qS9n0Y10E6g+v7cXW2RGny93mS/qnsp
+         7SHmTcsJoDbiFq77bFQQOEcDjJuxWD50eiBrjd6o9zc4nyABFBrYse0kGp4Z0KrqBbBk
+         aRzjC/xVeWZZ9JnbuMDOwIu6iRZNlJL2PsSnR9Tg/GVH/pfB5CUuVVH3CnGRwKCUIYdM
+         Z6PWtjCMff5PWwSoT541cShMjPoa3ngjD2nFzN+DKErGSPZk4h/Xtp3Nc4Ep16A4juNK
+         Iyfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=iXTuok2n3Kpiq77icrajlKqDC7/4MYbNor7kLCw9Nfg=;
+        b=QXxJggo+Np8HZcfxYZ6P2vxZrbOyJAhlX2Ztk1UwaE/NiJPuCXWHoLO2t52QBLmG8B
+         QMthSdxmiQ6E1f0Y1Y3jMTFVUTN8y0YwNt8SI8zr4fEdohG+EfVhH8rq3lYR/s7ZyNtr
+         0+r4pvyNWim2L2Zy4hjW3TRjAsrc7ZdmweAv9jtAaiLCS/okGU+PL9DL4YuZnl6YvYTS
+         WDC0R06QIDE7rKLzu2NBIHap4ADK6ive4puFjbZFaGcY3YpuAbXX0ThPq0cDU4nwSutW
+         Eul+JC9+ll4lKJ0pxraBZ8TR4Grzdlr4ineM0niUYzrJCzekpggUF0F8kr6DYZY4EB3j
+         bOAQ==
+X-Gm-Message-State: AOAM530ODFkKa8d8EslT8E86MfA2OxprCKfs6uTM536DrSa7oZnD3KxR
+	NFMjeSHdAH8NQBCepqOOg6EAYXhIYp4qOzRvvdPC/4Ng
+X-Google-Smtp-Source: ABdhPJzoENQgFPXIrLVFdi70qMmmx6xGRBTOu6SVtiys73FDtupPfU5lFQ3IWe065as9M7mlHSkymfOUfZNRueHwopo=
+X-Received: by 2002:a17:90a:634b:: with SMTP id v11mr9763695pjs.147.1612647879996;
+ Sat, 06 Feb 2021 13:44:39 -0800 (PST)
+MIME-Version: 1.0
+References: <CAEdkrYSDBkG6zcOYvC6cE2uY-AWxD_1DiX8+0z+dO7afymhR=w@mail.gmail.com>
+ <CAEdkrYSMMOwpjH1hxQewwa3z4rCas51z80nHWSfSbemG6zP6Pw@mail.gmail.com> <CAEdkrYQfn3iep0wpkgBwq=s-V5JrsM8cvYf5UZu3n0qg+zgVng@mail.gmail.com>
+In-Reply-To: <CAEdkrYQfn3iep0wpkgBwq=s-V5JrsM8cvYf5UZu3n0qg+zgVng@mail.gmail.com>
+From: M Ckr <cardtek.mcoker@gmail.com>
+Date: Sun, 7 Feb 2021 00:44:28 +0300
+Message-ID: <CAEdkrYTnOhp8+uQcE1H1aJA4v6Da5v8BWpA2kjX=k=cs-NcRvQ@mail.gmail.com>
+Subject: Re: Merhaba Subject
+To: =?UTF-8?Q?Mustafa_=C3=87oker?= <mustafackr64@gmail.com>
+Cc: mustafa.coker@yandex.com
+Content-Type: multipart/mixed; boundary="00000000000009995905bab1d876"
+
+--00000000000009995905bab1d876
+Content-Type: multipart/alternative; boundary="00000000000009995605bab1d874"
+
+--00000000000009995605bab1d874
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Merhaba
+
+M Ckr <cardtek.mcoker@gmail.com>, 7 =C5=9Eub 2021 Paz, 00:43 tarihinde =C5=
+=9Funu
+yazd=C4=B1:
+
+> Merhaba tekrar tekrar
+>
+> M Ckr <cardtek.mcoker@gmail.com>, 7 =C5=9Eub 2021 Paz, 00:43 tarihinde =
+=C5=9Funu
+> yazd=C4=B1:
+>
+>> Merhaba Tekrar
+>>
+>> M Ckr <cardtek.mcoker@gmail.com>, 7 =C5=9Eub 2021 Paz, 00:42 tarihinde =
+=C5=9Funu
+>> yazd=C4=B1:
+>>
+>>> Merhaba Body
+>>>
+>>
+
+--00000000000009995605bab1d874
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Merhaba=C2=A0</div><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">M Ckr &lt;<a href=3D"mailto:cardtek.mcoker@gm=
+ail.com">cardtek.mcoker@gmail.com</a>&gt;, 7 =C5=9Eub 2021 Paz, 00:43 tarih=
+inde =C5=9Funu yazd=C4=B1:<br></div><blockquote class=3D"gmail_quote" style=
+=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding=
+-left:1ex"><div dir=3D"ltr">Merhaba tekrar tekrar</div><br><div class=3D"gm=
+ail_quote"><div dir=3D"ltr" class=3D"gmail_attr">M Ckr &lt;<a href=3D"mailt=
+o:cardtek.mcoker@gmail.com" target=3D"_blank">cardtek.mcoker@gmail.com</a>&=
+gt;, 7 =C5=9Eub 2021 Paz, 00:43 tarihinde =C5=9Funu yazd=C4=B1:<br></div><b=
+lockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-le=
+ft:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Merhaba Te=
+krar</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_at=
+tr">M Ckr &lt;<a href=3D"mailto:cardtek.mcoker@gmail.com" target=3D"_blank"=
+>cardtek.mcoker@gmail.com</a>&gt;, 7 =C5=9Eub 2021 Paz, 00:42 tarihinde =C5=
+=9Funu yazd=C4=B1:<br></div><blockquote class=3D"gmail_quote" style=3D"marg=
+in:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1e=
+x"><div dir=3D"ltr">Merhaba Body</div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+
+--00000000000009995605bab1d874--
+--00000000000009995905bab1d876
+Content-Type: application/octet-stream; name=SelectionSort
+Content-Disposition: attachment; filename=SelectionSort
+Content-Transfer-Encoding: base64
+Content-ID: <f_kku8whdv0>
+X-Attachment-Id: f_kku8whdv0
+
+c2VsZWN0aW9uIHNvcnQuCgppbiBzZWxlY3Rpb24gc29ydCwgV2UgZGl2aWRlIHRoZSBhcnJheSB0
+byAyLiBGaXJzdCBwYXJ0IGlzIHNvcnRlZCBhcnJheS4gd2hlbiB3ZSBiZWdpbiB0aGUgc29ydGlu
+ZyBmaXJzdCBwYXJ0IGhhcyBqdXN0IHplcm8gZWxlbWVudC4gQW5kIHNlY29uZCBwYXJ0IGlzIHRo
+ZSBwYXJ0IHRvIGJlIHNvcnRlZC4gYWltIG9mIHRoZSBhbGdvcml0aG0sIGZpbmRpbmcgbG93ZXN0
+IGl0ZW0gaW4gcmVtYWluZyBhcnJheSBmb3IgZXZlcnkgc2Nhbi4gc28gd2Ugc3RhcnQgZnJvbSB0
+aGUgYmVnaW5uZyBvZiB0aGUgYXJyYXkgYW5kIHNlYXJjaCB0byBmaW5kIGxvd2VyIGl0ZW0gdGls
+bCB0byBlbmQgb2YgYXJyYXkuIFdoZW4gd2UgcmVhY2ggdG8gZW5kLCB3ZSBoYXZlIGxvd2VzdCBp
+dGVtIGluIGFycmF5LiBUaGVuIHdlIG5lZWQgdG8gc3dhcCBsb3dlc3QgaXRlbSBhbmQgZmlyc3Qg
+aXRlbSBvZiB0aGUgdW5zb3J0ZWQgcGFydC4gVGhlbiBpbmNyZW1lbnQgc29ydGVkIHBhcnQsIGRl
+Y3JlbWVudCB1bnNvcnRlZCBwYXJ0LiBhbmQgaXRlcmF0ZSB0aGlzIHN0ZXBzIHRpbGwgdG8gZmlu
+aXNoIGFsbCBpdGVtIGluIHRoZSB1bnNvcnRlZCBhcnJheS4=
+--00000000000009995905bab1d876--

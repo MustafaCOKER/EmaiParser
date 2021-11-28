@@ -1,0 +1,81 @@
+Delivered-To: mustafackr64@gmail.com
+Received: by 2002:a17:906:1dc6:0:0:0:0 with SMTP id v6csp4437402ejh;
+        Mon, 15 Nov 2021 05:33:00 -0800 (PST)
+X-Received: by 2002:ac8:590d:: with SMTP id 13mr39957411qty.295.1636983180500;
+        Mon, 15 Nov 2021 05:33:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1636983180; cv=none;
+        d=google.com; s=arc-20160816;
+        b=i/YCbhWHWKmv7kMIN0UvM7kWz8NvTvK+GIPQ7xx2armBNlCFlnez0LU8nYMGdZPCOW
+         UYkaFHitKJqhRhet9wOWQpxdlGpOBga5DL/0GlndayKu9xdYRn8Yq0bGlnee5p/iE8IM
+         zRW3nuvOxc1CWoDScI9J3BWSMNPY+/EtjwB4bd9U2qmX1lq/w9AqGmVxaTOQhhpjdqpB
+         0fo1xrZbKai8AGHsciYBANHlj3Z1h8kcRnBhTkuEvroAaIzyyyVyX9zpyCtQaS1cNS3B
+         mwhsS0Iaj1ftrwcanYhLtnRPMnhClvEEZaKqRLAAgtMS/vWdYnrX1Z9HBJKXvvuG6HQJ
+         /1Xw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=pWF4e6EZgqPIgG3AMj0FYRF1LaG3k1Ef+SIekBPajDQ=;
+        b=BHN07T7ExwDFPvVqMQfVgU8+OaAyxvB5RD64zGiVAUYMtH7d8+8tXxA3pP1ZpvMCo9
+         FiAYbEm9wyalDlgZzprckbIwYgTNQtSlYYsW/6Mxy83Uhqe0BQTcJYV6c7v31xZKvnfw
+         HRX+L/sJN1Q3rhCl1fai6Wv5iBBtRuhnmdOLKs8QD8/qwekPQuhY2yMpKiV6FxkDvXmE
+         TlB5VZaczbrkVO2Cgd4BTrxUbEs7lVX9W/tLVXejSSXqIp8dRE34PkZT07n9PDZjnIst
+         ZgMSqV7uFIROnwLTrQzBwtTjU1vKDjAkbkcRRLeIBd6sUbcOz1FRxB6csthwdN9Jv/Ui
+         vHQA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@x-raycenter.com header.s=google header.b=TKduNFzL;
+       spf=pass (google.com: domain of mustafa@x-raycenter.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mustafa@x-raycenter.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=x-raycenter.com
+Return-Path: <mustafa@x-raycenter.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id s195sor5798817ybc.51.2021.11.15.05.32.59
+        for <mustafackr64@gmail.com>
+        (Google Transport Security);
+        Mon, 15 Nov 2021 05:33:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of mustafa@x-raycenter.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@x-raycenter.com header.s=google header.b=TKduNFzL;
+       spf=pass (google.com: domain of mustafa@x-raycenter.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mustafa@x-raycenter.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=x-raycenter.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=x-raycenter.com; s=google;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=pWF4e6EZgqPIgG3AMj0FYRF1LaG3k1Ef+SIekBPajDQ=;
+        b=TKduNFzL8kLsmKoCel/jQWrbeQTluqKWaCCNNKvUvZRLsRC7+3KlHP9/fllcmUZdC0
+         SCcyBBIL5Nu9wubhkcapPp+QkASf8nQjfG53grlvtz1JHBfMIMr8FWNrmdJrHVQj1zy8
+         PkfWNorctmKYdH6ownEi0zoLx/8y7JYCCdEY5pcoBYRs6vJeYxhGuvwKb+7/9hz6Djpa
+         J2H8OaJEF/1lpTo+fPI0VUV4GLxhOjfpBGgOitcOvzcW3EIbJobKlbxlCQRPdF++7XKb
+         UmLywdv35arRSNCwD/JaCmePZemn2dNld9JsnGMMS8f+uI4eg6ggwtljfv6Dk/QjBrtJ
+         LaGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=pWF4e6EZgqPIgG3AMj0FYRF1LaG3k1Ef+SIekBPajDQ=;
+        b=Mgi2jfFvNeJ3ZpZyqJXa4qDAhni2ot2UVbdFSFFx90B9Syi/lISihMg/ZHRl6KwG76
+         yq967UMWdY4YiIEsdhDOWkT70HUIkiouChpZKcyqGxBkqsLZsJc7/mDZJG5MZvT126y+
+         EOqm0gqlf0IxIL25tmFlI2VBCBqpiNkGJkBMKtaE1qEvR7rYeDWFfw9XCJ/Up0g7y5IL
+         W7tmskEqpGRpKB4wOVIsKl7v1R3fJM7h523ttZnCVgPdpzevnPSGOhxDSOGDPPzsa/05
+         nTs4V6OeOS7QU6h+0MMtSHh8NgoODOxt8mijfpsGlrjnTxSQmRO2DLVPNRZi+NPwlxWX
+         CVTA==
+X-Gm-Message-State: AOAM5330rR4nFc60/38Sc/i2VCUMX+BdfiJDeR/WKcoyQCL8G4xqu084
+	UEdSBobE8IQyjtVXtvEkTdsjNYrWNQoBrBTBtfRaASiMHGswuA==
+X-Google-Smtp-Source: ABdhPJxt7GD6poPXUfw5pyqGxdY8eQiEqKV7C0nt6YPJ4QM2JZQ4gsPpgPo0coupahR+z3qAmIkq8xblGDYWxOWwcdQ=
+X-Received: by 2002:a25:24d4:: with SMTP id k203mr41895896ybk.365.1636983179502;
+ Mon, 15 Nov 2021 05:32:59 -0800 (PST)
+MIME-Version: 1.0
+From: =?UTF-8?Q?Mustafa_=C3=87oker?= <mustafa@x-raycenter.com>
+Date: Mon, 15 Nov 2021 16:27:54 +0300
+Message-ID: <CACTPEzXPA0K7gMiLHk=0P3vYrgpzuzKjLxXQAaS8QsgcXRP5Vg@mail.gmail.com>
+Subject: Clonezilla Doc
+To: mustafackr64@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000eafac205d0d3d8b2"
+
+--000000000000eafac205d0d3d8b2
+Content-Type: text/plain; charset="UTF-8"
+
+https://clonezilla.org/liveusb.php
+
+--000000000000eafac205d0d3d8b2
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><a href="https://clonezilla.org/liveusb.php">https://clonezilla.org/liveusb.php</a><br></div>
+
+--000000000000eafac205d0d3d8b2--
