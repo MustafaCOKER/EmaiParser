@@ -15,6 +15,13 @@ char *fileContent = new char[CONTENT_SIZE];
 void readFile(const char *const path)
 {
     std::ifstream infile(path);
+
+    if (!infile.is_open())
+    {
+        std::cerr << "File Could Not opened\n";
+        exit(-1);
+    }
+
     std::stringstream iss;
     std::string line;
 
@@ -26,6 +33,12 @@ void readFile(const char *const path)
 
 int main(int argc, char *argv[])
 {
+    if (argc == 1)
+    {
+        std::cerr << "USAGE : ./EmailParser sampleEmailFile\n";
+        exit(-1);
+    }
+
     memset(fileContent, 0, CONTENT_SIZE);
 
     readFile(argv[1]);

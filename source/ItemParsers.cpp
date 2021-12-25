@@ -21,8 +21,8 @@ uint32_t PARSERS::OneLineAttrParser(const char *content, EmailAttr &attr, uint32
     attr.SetVal(std::make_pair(content + keysize, endofline - keysize));
 
     BeginEndOffsets be = attr.GetOffsets();
-    std::string ss(be.first, be.second);
-    // std::cout << "Key : [" << attr.GetKey() << "] Value Str : [" << ss << "]\n";
+    std::string ss(be.first, be.second - 2);
+    std::cout << "Key : [" << attr.GetKey() << "] Value Str : [" << ss << "]\n";
 
     return endofline;
 }
