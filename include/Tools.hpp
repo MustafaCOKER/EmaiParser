@@ -24,6 +24,7 @@ public:
 
     static uint32_t GotoEndofLine(const char *content);
     static uint32_t strnchr(const char *str, char c, uint32_t len);
+    static const char *strnstr(const char *str1, const char *str2, uint32_t max_len);
 
     static uint32_t CleanWhiteSpaces(const char *, uint32_t);
 };

@@ -28,7 +28,7 @@ void EmailParser::PrepareAttributesQueue()
     _attributes.emplace(_attributes.end(), EmailAttr("To:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Cc:", PARSERS::OneLineAttrParser));
     _attributes.emplace(_attributes.end(), EmailAttr("Subject:", PARSERS::OneLineAttrParser));
-    // _attributes.emplace(_attributes.end(), EmailAttr("Content-Type:", PARSERS::ContentAttrParser, true));
+    _attributes.emplace(_attributes.end(), EmailAttr("Content-Type:", PARSERS::ContentAttrParser, true));
 }
 
 bool EmailParser::parse(const char *emailContent)
